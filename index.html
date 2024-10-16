@@ -1,142 +1,276 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html class="ie lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html class="ie lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>
-<html> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en"><!-- <![endif]-->
+<html lang="en">
 <head>
-    <title>Happy Birthday</title>
-    <meta charset="UTF-8"/>
-    <meta name="description" content="Happy Birthday">
-    <meta name="robots" content="index, follow"/>
-    <link rel="author" href="https://plus.google.com/u/1/+AyushSharma1/"/>
-    <meta name="keywords" content="Birthday, Happy">
-    <!-- Strat of Facebook Meta -->
-    <meta property="og:type" content="E-Greeting"/>
-    <meta property="og:image" content="favicon.ico"/>
-    <meta property="og:description" content="Wish you a very Happy Birthday">
-    <!-- End of Facebook Meta Tags -->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/>
-    <link rel="stylesheet" href="assets/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="assets/loading.css">
-    <link rel="stylesheet/less" href="assets/cake.less">
-    <script src="assets/less.min.js"></script>
-    <script src="config.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Birthday Card</title>
+    <style>
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to top right, #FFD1DC, #FFFACD);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    position: relative;
+}
+
+.message h1 {
+    font-size: 2.5rem;
+    color: #FF6347;
+    margin: 20px 0;
+    animation: pop 2.5s infinite ease-in-out;
+}
+
+.message p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.balloons {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.balloon {
+    width: 50px;
+    height: 60px;
+    background-color: #ff6ec7;
+    border-radius: 50%;
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+}
+
+.balloon1 {
+    background-color: #FF6347;
+    left: 20px;
+    animation-delay: 0s;
+}
+
+.balloon2 {
+    background-color: #FFD700;
+    left: 90px;
+    animation-delay: 1s;
+}
+
+.balloon3 {
+    background-color: #00FF7F;
+    left: 160px;
+    animation-delay: 2s;
+}
+
+.balloon4 {
+    background-color: #1E90FF;
+    left: 230px;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.cake {
+    margin-top: 20px;
+    position: relative;
+}
+
+.cake-layer {
+    width: 200px;
+    height: 30px;
+    background-color: #FFB6C1;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.cake-layer1 {
+    background-color: #FF69B4;
+    width: 160px;
+    margin-bottom: 5px;
+}
+
+.cake-layer2 {
+    background-color: #FF1493;
+    width: 120px;
+    margin-bottom: 5px;
+}
+
+.cake-layer3 {
+    background-color: #FFC0CB;
+    width: 80px;
+}
+
+.candles {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.candle {
+    width: 10px;
+    height: 30px;
+    background-color: white;
+    position: relative;
+}
+
+.candle::after {
+    content: '';
+    width: 6px;
+    height: 12px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flicker 0.4s alternate infinite;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.stars {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    background-color: #FFD700;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    position: absolute;
+    animation: rotate 4s infinite ease-in-out;
+}
+
+.star:nth-child(1) {
+    left: -50px;
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    left: 0;
+    animation-delay: 1s;
+}
+
+.star:nth-child(3) {
+    left: 50px;
+    animation-delay: 2s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.confetti {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: radial-gradient(circle, #FFD700 10%, transparent 11%),
+                      radial-gradient(circle, #00FF7F 10%, transparent 11%),
+                      radial-gradient(circle, #FF6347 10%, transparent 11%);
+    background-size: 10px 10px;
+    background-position: 10px 10px;
+    animation: confetti-fall 6s infinite ease-in-out;
+}
+
+@keyframes confetti-fall {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200px 200px;
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+</style>
 </head>
-
 <body>
-<div class="loading"></div>
-<audio class="song" controls loop>
-    <source src="assets/hbd.mp3"></source>
-    Your browser isn't invited for super fun audio time.
-</audio>
-<div class="balloons text-center" id="b1">
-    <h2 style="color:#F2B300;"></h2>
-</div>
-<div class="balloons text-center" id="b2">
-    <h2 style="color:#0719D4;"></h2>
-</div>
-<div class="balloons text-center" id="b3">
-    <h2 style="color:#D14D39;"></h2>
-</div>
-<div class="balloons text-center" id="b4">
-    <h2 style="color:#8FAD00;"></h2>
-</div>
-<div class="balloons text-center" id="b5">
-    <h2 style="color:#8377E4;"></h2>
-</div>
-<div class="balloons text-center" id="b6">
-    <h2 style="color:#99C96A;"></h2>
-</div>
-<div class="balloons text-center" id="b7">
-    <h2 style="color:#20CFB4;"></h2>
-</div>
-
-<img src="assets/Balloon-Border.png" width="100%" class="balloon-border">
-
-
-<div class="container">
-
-    <div class="row">
-        <div class="col-md-2 col-xs-2 bulb-holder">
-            <div class="bulb" id="bulb_yellow"></div>
+    <div class="card">
+        <div class="balloons">
+            <div class="balloon balloon1"></div>
+            <div class="balloon balloon2"></div>
+            <div class="balloon balloon3"></div>
+            <div class="balloon balloon4"></div>
         </div>
-        <div class="col-md-2 col-xs-2 bulb-holder">
-            <div class="bulb" id="bulb_red"></div>
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
         </div>
-        <div class="col-md-2 col-xs-2 bulb-holder">
-            <div class="bulb" id="bulb_blue"></div>
+        <div class="message">
+            <h1>Happy Birthday!</h1>
+            <p>May your day be filled with joy, love, and laughter!</p>
         </div>
-        <div class="col-md-2 col-xs-2 bulb-holder">
-            <div class="bulb" id="bulb_green"></div>
-        </div>
-        <div class="col-md-2 col-xs-2 bulb-holder">
-            <div class="bulb" id="bulb_pink"></div>
-        </div>
-        <div class="col-md-2 col-xs-2 bulb-holder">
-            <div class="bulb" id="bulb_orange"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <img src="assets/banner.png" class="bannar">
-        </div>
-    </div>
-    <!-- <div class="row message">
-        <div class="col-md-12"><p>Khushbu</p></div>
-    </div> -->
-    <div class="row cake-cover">
-        <div class="col-md-12 texr-center">
-            <div class="cake">
-                <div class="velas">
-                    <div class="fuego"></div>
-                    <div class="fuego"></div>
-                    <div class="fuego"></div>
-                    <div class="fuego"></div>
-                    <div class="fuego"></div>
-                </div>
-                <div class="cobertura"></div>
-                <div class="bizcocho"></div>
+        <div class="cake">
+            <div class="cake-layer cake-layer1"></div>
+            <div class="cake-layer cake-layer2"></div>
+            <div class="cake-layer cake-layer3"></div>
+            <div class="candles">
+                <div class="candle"></div>
+                <div class="candle"></div>
+                <div class="candle"></div>
             </div>
         </div>
+        <div class="confetti"></div>
     </div>
-    <div class="row message">
-        <div class="col-md-12" id="texts-container">
-        </div>
-    </div>
-    <div class="navbar navbar-fixed-bottom">
-        <div class="row">
-            <div class="col-md-6 text-center col-md-offset-3">
-                <button class="btn btn-primary" id="turn_on">Turn On Lights</button>
-                <button class="btn btn-primary" id="play">Play Music</button>
-                <button class="btn btn-primary" id="bannar_coming">Let's Decorate</button>
-                <button class="btn btn-primary" id="balloons_flying">Fly With Balloons</button>
-                <button class="btn btn-primary" id="cake_fadein">Most Delicious Cake Ever</button>
-                <button class="btn btn-primary" id="light_candle"> Light Candle</button>
-                <button class="btn btn-primary" id="wish_message">Happy Birthday</button>
-                <button class="btn btn-primary" id="story">A mesage for you</button>
-                <!-- <button class="btn btn-primary" id="cake_cut">Lrt's Cut the Cake</button> -->
-            </div>
-        </div>
-    </div>
-
-
-</div>
 </body>
-<script src="assets/jquery.min.js"></script>
-<script src="./assets/bootstrap.min.js"></script>
-<script src="assets/effect.js"></script>
-
-<script src="custom.js"></script>
-
 </html>
